@@ -36,5 +36,13 @@ $(document).ready(function() {
       window.dancers[i].lineUp();
     }
   });
+
+  $('.maybe').on('click', function(event) {
+    for (var i = 0; i < window.dancers.length; i += 2) {
+      var top = window.dancers[i].top;
+      var left = window.dancers[i].left + 100;
+      window.dancers[i + 1].setPosition(top, left);
+    }
+  });
 });
 
