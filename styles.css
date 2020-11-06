@@ -4,6 +4,9 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image: url('images/lisa.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
