@@ -31,12 +31,12 @@ body, a:link, a:visited, a:active{
 .thumbs-up-dancer{
   position:absolute;
 }
-.thumbs-up-dancer:hover{
+/* .thumbs-up-dancer:hover{
   transform:scale(2);
-}
+} */
 .thumbs-down-dancer{
   position:absolute;
 }
-.thumbs-down-dancer:hover{
+/* .thumbs-down-dancer:hover{
   transform:scale(2);
-}
+} */
