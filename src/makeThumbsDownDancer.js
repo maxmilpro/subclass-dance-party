@@ -1,6 +1,7 @@
 var makeThumbsDownDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.$node.addClass('thumbs-down-dancer').removeClass('dancer').append('<img src="images/thumbsDown.png" />');
+  this.linedUp = false;
 };
 
 // set prototype
@@ -14,4 +15,20 @@ makeThumbsDownDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   this.$node.fadeIn();
   this.$node.fadeOut();
+};
+makeThumbsDownDancer.prototype.lineUp = function() {
+  if (this.linedUp) {
+    var originalStyleSettings = {
+      top: this.top,
+      left: this.left
+    };
+    this.$node.css(originalStyleSettings);
+    this.linedUp = false;
+  } else {
+    var styleSettings = {
+      left: '200px'
+    };
+    this.$node.css(styleSettings);
+    this.linedUp = true;
+  }
 };
