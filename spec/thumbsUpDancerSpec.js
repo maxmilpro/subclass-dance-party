@@ -12,10 +12,10 @@ describe('thumbsUpDancer', function() {
     expect(thumbsUpDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(thumbsUpDancer.$node, 'toggle');
+  it('should have a step function that makes its node slide up and down', function() {
+    sinon.spy(thumbsUpDancer.$node, 'animate');
     thumbsUpDancer.step();
-    expect(thumbsUpDancer.$node.toggle.called).to.be.true;
+    expect(thumbsUpDancer.$node.animate.called).to.be.true;
   });
 
   describe('dance', function() {
@@ -29,6 +29,19 @@ describe('thumbsUpDancer', function() {
 
       clock.tick(timeBetweenSteps);
       expect(thumbsUpDancer.step.callCount).to.be.equal(2);
+    });
+  });
+
+  describe('linedUp', function() {
+    it('should have a linedUp property initially set to false and after running should be true', function() {
+      expect(thumbsUpDancer.linedUp).to.be.false;
+      thumbsUpDancer.lineUp();
+      expect(thumbsUpDancer.linedUp).to.be.true;
+    });
+
+    it('should change right CSS property to 200px', function() {
+      thumbsUpDancer.lineUp();
+      expect(thumbsUpDancer.$node.css('right')).to.be.equal('200px');
     });
   });
 });

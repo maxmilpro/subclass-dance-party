@@ -13,8 +13,6 @@ makeThumbsUpDancer.prototype.constructor = makeThumbsUpDancer;
 // refactor methods down here:
 makeThumbsUpDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
-  // this.$node.fadeIn();
-  // this.$node.fadeOut();
   this.$node.animate({top: '-=50px'});
   this.$node.animate({top: '+=50px'});
 };

@@ -30,12 +30,13 @@ $(document).ready(function() {
     $('.danceFloor').append(dancer.$node);
     window.dancers.push(dancer);
   });
+
   $('.lineUp').on('click', function(event) {
-    // iterate through dancers
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp();
     }
   });
+
   $('.maybe').on('click', function(event) {
     for (var i = 0; i < window.dancers.length; i += 2) {
       var top = window.dancers[i].top;
@@ -43,10 +44,12 @@ $(document).ready(function() {
       window.dancers[i + 1].setPosition(top, left);
     }
   });
+
   $('body').on('mouseover', '.thumbs-up-dancer, .thumbs-down-dancer', function() {
     var styleSettings = {transform: 'scale(2)'};
     $(this).css(styleSettings);
   });
+
   $('body').on('mouseout', '.thumbs-up-dancer, .thumbs-down-dancer', function() {
     var styleSettings = {transform: 'scale(1)'};
     $(this).css(styleSettings);
