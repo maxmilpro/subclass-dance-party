@@ -3,14 +3,18 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color: rgb(96, 13, 23);
   background-image: url('images/lisa.jpg');
   background-position: center;
   background-repeat: no-repeat;
   font-size: 18px;
 }
+a{
+  all: unset;
+}
+
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: rgb(254, 203, 0);
 }
 .title, .addDancerButton, .lineUp, .maybe{
   padding:5px 12px;
@@ -18,10 +22,11 @@ body, a:link, a:visited, a:active{
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: rgb(53, 99, 97);
 }
 .title{
   background-color: #777;
+  float:left;
 }
 .dancer{
   border:10px solid red;
